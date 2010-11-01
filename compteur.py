@@ -2,24 +2,27 @@ LISTE = "compteur.liste"
 VERROU = "compteur.lock"
 
 def erreur (aString):
+	"""Signifie un message d'erreur"""
 	print aString
 
 def verrou ():
+	"""Verifie l'état du verrou"""
 	if ! fluxLock = open(VERROU, "r") :
 		erreur("impossible d'ouvrir le fichier")
 		exit()
 	etat = fluxLock.readline()
 	fluxLock.close()
 	if  etat == "unlock":
-		return True
-	else:
 		return False
+	else:
+		return True
 		
 def verrouLock():
+	"""Verouille le verrou"""
 	if ! fluxLock = open(VERROU, "w") :
 		erreur ("impossible d'ouvrir le fichier, attention le system de verrou est cassé")
 		exit()
-	fluxLock.write("true")
+	fluxLock.write("lock")
 	fluxLock.close()
 	return True
 
@@ -28,6 +31,4 @@ def verrouLock():
 if verrou() :
 	print "verrou activé"
 	exit()
-
-
 	

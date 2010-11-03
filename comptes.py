@@ -22,6 +22,9 @@ class Comptes:
         with open(self.dataFile, 'w') as fluxdata:
             fluxdata.write(str(self))
 
+    def incr(self, nom, x = 1):
+    	self.comptes[nom].incr(x)
+
     def __str__(self):
         contenu = ''
         for user in self.comptes.values():

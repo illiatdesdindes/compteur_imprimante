@@ -33,8 +33,11 @@ class Comptes:
 
 class User:
     nbUser = 0
+     # s'il ya des probleme dans le nb de users faire attetion a raise TypeError
+     # et a __del__() dans le cas de ligne vide dans le fichier .list
 
     def __init__(self, nom = '', compteur = 0, data = ''):
+        User.nbUser += 1
         if nom:
             self.nom = nom
             self.compteur = compteur
@@ -44,7 +47,7 @@ class User:
             self.majAttr()
         else:
             raise TypeError('mauvaise initialisation: ni nom, ni data n\' ete fourni')
-        User.nbUser += 1
+
 
     def majData(self):
         self.data = self.serialise()

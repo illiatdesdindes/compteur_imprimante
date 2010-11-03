@@ -44,10 +44,12 @@ def verrouUnlock():
 	return True
 	
 if __name__ == "__main__":
-	# On verifie si le verrou est activer, auquel cas on stop
-	if verrou() :
-		message( "verrou activé" ) 
-		exit()
 	
-	verrouLock()
+	
+	
+	
+	
+	
+	
+	
 	

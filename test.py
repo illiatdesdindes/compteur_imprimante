@@ -2,10 +2,8 @@ from comptes import *
 
 c = Comptes('compteur.list')
 
-c.ajoute('boi')
-c.ajoute('zert',2)
-c.incr('boi')
-c.incr('zert',2)
+c.ajoute('boi',2)
+c.ajoute('bob',4)
 c.enregistre()
 
 print c

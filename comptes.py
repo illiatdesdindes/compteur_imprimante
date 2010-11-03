@@ -15,14 +15,20 @@ class Comptes:
                 pass #evite d'enregistrer des lignes vides
 
 
-    def ajoute(self, nom, compteur = 0):
+    def ajoute(self, nom, x):
+        if self.comptes.has_key(nom):
+            self.incr(nom, x)
+        else :
+            self.nouveau(nom, x)
+
+    def nouveau(self, nom, compteur):
         self.comptes[nom] = User(nom, compteur)
 
     def enregistre(self):
         with open(self.dataFile, 'w') as fluxdata:
             fluxdata.write(str(self))
 
-    def incr(self, nom, x = 1):
+    def incr(self, nom, x):
     	self.comptes[nom].incr(x)
 
     def __str__(self):
@@ -62,7 +68,8 @@ class User:
         return '{0}:{1}'.format(self.nom, self.compteur)
 
     def deserialise(self):
-        return self.data.split(':')
+        tmp = self.data.split(':')
+        return tmp[0], int(tmp[1])
 
     def incr(self, x = 1):
         self.compteur += x

@@ -1,6 +1,10 @@
-from compteur import*
+from comptes import *
 
-if sys.args[1] == '--ru':
-	f = open('lastuser','w')
-	f.write('')
-	f.close
+c = Comptes('compteur.list')
+print c.comptes
+c.ajoute('iren')
+print c.comptes
+c.supprime(bob)
+print c.comptes
+c.enregistre()
+#print User.nbUser

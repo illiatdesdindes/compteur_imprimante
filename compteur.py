@@ -111,8 +111,6 @@ if __name__ == "__main__":
 		choix = raw_input("arreter 'a' ou reesayer 'r'")
 		if choix == 'a': exit()
 	
-	verrouLock()
-	
 	lastUser = lastUser()
 	print "dernier utilisateur '"+lastUser+"'"
 	entrer = raw_input("'user:numberOfCopy' laisser user vide si vous êtes le dernier utilisateur:  >")

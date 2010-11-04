@@ -17,9 +17,9 @@ class Comptes:
 
     def ajoute(self, nom, x):
         if self.comptes.has_key(nom):
-            self.incr(nom, x)
+            self.incr(nom, int(x))
         else :
-            self.nouveau(nom, x)
+            self.nouveau(nom, int(x))
 
     def nouveau(self, nom, compteur):
         self.comptes[nom] = User(nom, compteur)
